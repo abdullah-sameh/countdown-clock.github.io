@@ -6,8 +6,8 @@ const input = document.querySelector('input')
 
 function countDown(time) {
     //* the end time =>
-    const now = new Date()
-    const then = now + time * 1000
+    const now = Date.now()
+    const then = now + Number(time) * 1000
     endTime(then)
 
     // if there are any interval clear it
@@ -30,6 +30,7 @@ function endTime(time) {
     let hour = end.getHours()
     if (hour > 12) hour -= 12 // to make system 12 o'clock
     if (hour < 10) hour = '0' + hour // '02'
+    console.log(hour)
     let min = end.getMinutes()
     if (min < 10) min = '0' + min // '03'
     let sec = end.getSeconds()
