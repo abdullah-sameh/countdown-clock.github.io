@@ -14,7 +14,10 @@ function countDown(time) {
     clearInterval(myInterval)
 
     myInterval = setInterval(() => {
-        if (time === 0) return clearInterval(myInterval)
+        if (time === 0) {
+            timeOut.innerHTML = '00:00'
+            return clearInterval(myInterval)
+        }
         time -= 1
         let min = Math.floor(time / 60)
         let sec = time - (min * 60)
